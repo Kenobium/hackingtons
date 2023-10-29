@@ -8,16 +8,13 @@
 import SwiftUI
 import OpenAI
 
-var titles: [String] = [];
-var descs: [String] = [];
-var priorities: [String] = [];
-
 struct AlertsView: View {
     var rec: Record
     @ObservedObject var generator: Generator
     @State private var hasGenerated = false
     @State var alerts: [Alert] = [Alert(priority: Priority.high, title: "Generating, please wait...", desc: "Go back")];
-    init() {
+    init(rec: Record) {
+        self.rec = rec
         generator = Generator(record: rec)
     }
     var body: some View {
@@ -29,7 +26,12 @@ struct AlertsView: View {
         .task {
             guard !hasGenerated else { return }
             hasGenerated = true
-            generator.generateAlerts(record: records_full[0], alerts: alerts)
+            generator.generateAlerts(record: rec.full, alerts: alerts) { res in
+                for i in res!["title"]!.indices {
+                    alerts.remove(at: 0)
+                    alerts.append(Alert(priority: Priority(rawValue: res!["priority"]![i])!, title: res!["title"]![i], desc: res!["content"]![i]))
+                }
+            }
         }
     }
 }
@@ -39,7 +41,7 @@ final class Generator: ObservableObject {
     private var resDict: [String: [String]]? = [:]
     var record: String
     init(record: Record) {
-        self.openAI = OpenAI(apiToken: "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")
+        self.openAI = OpenAI(apiToken: "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")
         self.record = record.full
     }
     let functions = [
@@ -58,9 +60,9 @@ final class Generator: ObservableObject {
                 )
         )
     ]
-    func generateAlerts(record: String, alerts: [Alert]) {
+    func generateAlerts(record: String, alerts: [Alert], completion: @escaping ([String: [String]]?) -> Void) {
         let query = ChatQuery(
-            model: "gpt-3.5-turbo-16k",  // 0613 is the earliest version with function calls support.
+            model: "gpt-4-32k",  // 0613 is the earliest version with function calls support.
             messages: [
                 Chat(role: .system, content: "You are an implementation of a clinical decision support system (CDSS). You will be provided with information from the patient's medical record. Generate the most relevant alerts that I, as a physician, would need to be aware of when treating the patient and assign each alert a priority score of 'low', 'med', or 'high'. Each array in the output should contain corresponding elements. Sort the alerts from highest to lowest priority."),
                 Chat(role: .user, content: record)
@@ -71,11 +73,9 @@ final class Generator: ObservableObject {
         openAI.chats(query: query) { partialResult in
             switch partialResult {
             case .success(let result):
-                resDict = try? JSONSerialization.jsonObject(with:result.choices[0].message.functionCall?.arguments?.data(using: .utf8) ?? Data()) as? [String: [String]]
-                print(resDict!)
-                for i in self.resDict!["title"]!.indices {
-                    alerts.append(Alert(priority: Priority(rawValue: resDict!["priority"]![i])!, title: resDict!["title"]![i], desc: resDict!["content"]![i]))
-                }
+                self.resDict = try? JSONSerialization.jsonObject(with:result.choices[0].message.functionCall?.arguments?.data(using: .utf8) ?? Data()) as? [String: [String]]
+                print(self.resDict!)
+                completion(self.resDict)
             case .failure(let error):
                 print(error)
             }
