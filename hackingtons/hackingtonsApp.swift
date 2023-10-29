@@ -11,7 +11,7 @@ import SwiftUI
 struct hackingtonsApp: App {
     var body: some Scene {
         WindowGroup {
-            test()
+            RecordsView()
         }
     }
 }

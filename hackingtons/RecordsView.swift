@@ -8,28 +8,48 @@
 import SwiftUI
 
 struct RecordsView: View {
+    let records = [
+        Record(name: "Jane Smith", dob: "03/12/1975"),
+        Record(name: "Robert Johnson", dob: "11/05/1962"),
+        Record(name: "Maria Rodriguez", dob: "02/20/1988"),
+        Record(name: "William Turner", dob: "09/08/1960")
+    ]
+    
     var body: some View {
-        Record(name: "Jane Smith", dob: "03/12/1975")
+        NavigationView() {
+            List(records) { rec in
+                RecordItem(name: rec.name, dob: rec.dob)
+            }
+            .navigationTitle("Patient Records")
+        }
+        
     }
 }
 
-struct Record: View {
+struct Record: Identifiable {
+    var id = UUID()
+    var name: String
+    var dob: String
+}
+
+struct RecordItem: View {
     var name: String
     var dob: String
     
     var body: some View {
-        HStack(spacing: 20.0) {
+        HStack {
             Image(systemName: "person.circle.fill")
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .scaledToFit()
                 .foregroundColor(.blue)
-                
-                
-            VStack {
+            
+            VStack(alignment: .leading) {
                 Text(name)
                     .font(.headline)
-                Text(dob)
+                Text("DOB: \(dob)")
             }
+            .padding(.leading)
             
             Spacer()
             
@@ -37,12 +57,14 @@ struct Record: View {
                 .foregroundColor(.gray)
             
         }
-        .padding()
-        .frame(height: 75.0)
-        .cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
+        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .frame(height: 75)
+        
+        
     }
 }
 
 #Preview {
     RecordsView()
 }
+
