@@ -101,9 +101,9 @@
 				FC1FC2A12AEDAC7B001DEC48 /* hackingtonsApp.swift */,
 				FC1FC2A32AEDAC7B001DEC48 /* test.swift */,
 				FC1FC2CB2AEDB8BE001DEC48 /* RecordsView.swift */,
+				FC1FC2CD2AEDC7B2001DEC48 /* SwiftUIView.swift */,
 				FC1FC2A52AEDAC7F001DEC48 /* Assets.xcassets */,
 				FC1FC2A72AEDAC7F001DEC48 /* Preview Content */,
-				FC1FC2CD2AEDC7B2001DEC48 /* SwiftUIView.swift */,
 			);
 			path = hackingtons;
 			sourceTree = "<group>";
