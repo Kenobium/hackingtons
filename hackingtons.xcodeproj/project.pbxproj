@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		FC1FC2A22AEDAC7B001DEC48 /* hackingtonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2A12AEDAC7B001DEC48 /* hackingtonsApp.swift */; };
-		FC1FC2A42AEDAC7B001DEC48 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2A32AEDAC7B001DEC48 /* test.swift */; };
 		FC1FC2A62AEDAC7F001DEC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1FC2A52AEDAC7F001DEC48 /* Assets.xcassets */; };
 		FC1FC2A92AEDAC7F001DEC48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1FC2A82AEDAC7F001DEC48 /* Preview Assets.xcassets */; };
 		FC1FC2B32AEDAC7F001DEC48 /* hackingtonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2B22AEDAC7F001DEC48 /* hackingtonsTests.swift */; };
 		FC1FC2BD2AEDAC7F001DEC48 /* hackingtonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2BC2AEDAC7F001DEC48 /* hackingtonsUITests.swift */; };
 		FC1FC2BF2AEDAC7F001DEC48 /* hackingtonsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2BE2AEDAC7F001DEC48 /* hackingtonsUITestsLaunchTests.swift */; };
 		FC1FC2CC2AEDB8BE001DEC48 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2CB2AEDB8BE001DEC48 /* RecordsView.swift */; };
-		FC1FC2CE2AEDC7B2001DEC48 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2CD2AEDC7B2001DEC48 /* SwiftUIView.swift */; };
+		FC1FC2CE2AEDC7B2001DEC48 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2CD2AEDC7B2001DEC48 /* PatientView.swift */; };
+		FC1FC2D22AEDF770001DEC48 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2D12AEDF770001DEC48 /* Record.swift */; };
+		FC1FC2D42AEE2220001DEC48 /* MedicalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC2D32AEE2220001DEC48 /* MedicalHistoryView.swift */; };
+		FC2D03F72AEE2FD500BBF62E /* BPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D03F62AEE2FD500BBF62E /* BPView.swift */; };
+		FC2D03F92AEE358000BBF62E /* HRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D03F82AEE358000BBF62E /* HRView.swift */; };
+		FC6598DD2AEE709D00B035D1 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FC6598DC2AEE709D00B035D1 /* OpenAI */; };
+		FCDE0C8A2AEE451900909034 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE0C892AEE451900909034 /* AlertsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,6 @@
 /* Begin PBXFileReference section */
 		FC1FC29E2AEDAC7B001DEC48 /* hackingtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackingtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1FC2A12AEDAC7B001DEC48 /* hackingtonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackingtonsApp.swift; sourceTree = "<group>"; };
-		FC1FC2A32AEDAC7B001DEC48 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		FC1FC2A52AEDAC7F001DEC48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1FC2A82AEDAC7F001DEC48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC1FC2AE2AEDAC7F001DEC48 /* hackingtonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hackingtonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +51,12 @@
 		FC1FC2BC2AEDAC7F001DEC48 /* hackingtonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackingtonsUITests.swift; sourceTree = "<group>"; };
 		FC1FC2BE2AEDAC7F001DEC48 /* hackingtonsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackingtonsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC1FC2CB2AEDB8BE001DEC48 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
-		FC1FC2CD2AEDC7B2001DEC48 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		FC1FC2CD2AEDC7B2001DEC48 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
+		FC1FC2D12AEDF770001DEC48 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		FC1FC2D32AEE2220001DEC48 /* MedicalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryView.swift; sourceTree = "<group>"; };
+		FC2D03F62AEE2FD500BBF62E /* BPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPView.swift; sourceTree = "<group>"; };
+		FC2D03F82AEE358000BBF62E /* HRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRView.swift; sourceTree = "<group>"; };
+		FCDE0C892AEE451900909034 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6598DD2AEE709D00B035D1 /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				FC1FC2A12AEDAC7B001DEC48 /* hackingtonsApp.swift */,
-				FC1FC2A32AEDAC7B001DEC48 /* test.swift */,
 				FC1FC2CB2AEDB8BE001DEC48 /* RecordsView.swift */,
-				FC1FC2CD2AEDC7B2001DEC48 /* SwiftUIView.swift */,
+				FC1FC2CD2AEDC7B2001DEC48 /* PatientView.swift */,
+				FCDE0C892AEE451900909034 /* AlertsView.swift */,
+				FC1FC2D32AEE2220001DEC48 /* MedicalHistoryView.swift */,
+				FC2D03F62AEE2FD500BBF62E /* BPView.swift */,
+				FC2D03F82AEE358000BBF62E /* HRView.swift */,
+				FC1FC2D12AEDF770001DEC48 /* Record.swift */,
 				FC1FC2A52AEDAC7F001DEC48 /* Assets.xcassets */,
 				FC1FC2A72AEDAC7F001DEC48 /* Preview Content */,
 			);
@@ -149,6 +163,9 @@
 			dependencies = (
 			);
 			name = hackingtons;
+			packageProductDependencies = (
+				FC6598DC2AEE709D00B035D1 /* OpenAI */,
+			);
 			productName = hackingtons;
 			productReference = FC1FC29E2AEDAC7B001DEC48 /* hackingtons.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +238,9 @@
 				Base,
 			);
 			mainGroup = FC1FC2952AEDAC7B001DEC48;
+			packageReferences = (
+				FC6598DB2AEE709D00B035D1 /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			productRefGroup = FC1FC29F2AEDAC7B001DEC48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,9 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1FC2CC2AEDB8BE001DEC48 /* RecordsView.swift in Sources */,
-				FC1FC2A42AEDAC7B001DEC48 /* test.swift in Sources */,
-				FC1FC2CE2AEDC7B2001DEC48 /* SwiftUIView.swift in Sources */,
+				FCDE0C8A2AEE451900909034 /* AlertsView.swift in Sources */,
+				FC1FC2CE2AEDC7B2001DEC48 /* PatientView.swift in Sources */,
+				FC1FC2D22AEDF770001DEC48 /* Record.swift in Sources */,
+				FC2D03F92AEE358000BBF62E /* HRView.swift in Sources */,
+				FC2D03F72AEE2FD500BBF62E /* BPView.swift in Sources */,
 				FC1FC2A22AEDAC7B001DEC48 /* hackingtonsApp.swift in Sources */,
+				FC1FC2D42AEE2220001DEC48 /* MedicalHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +614,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC6598DB2AEE709D00B035D1 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC6598DC2AEE709D00B035D1 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6598DB2AEE709D00B035D1 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC1FC2962AEDAC7B001DEC48 /* Project object */;
 }
